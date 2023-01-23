@@ -1,0 +1,23 @@
+{
+  "name": "advanced-typescript",
+  "version": "0.0.0",
+  "description": "Code for Advanced TypeScript Workshop",
+  "author": "Craig Spence",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phenomnomnominal/advanced-typescript.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phenomnomnominal/advanced-typescript/issues"
+  },
+  "homepage": "https://github.com/phenomnomnominal/advanced-typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
