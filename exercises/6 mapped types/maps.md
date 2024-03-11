@@ -1,6 +1,6 @@
 # Magic with Mapped Types!
 
-1. Let's think back to the "Intrinstic String Types" like "Uppercase" and "Lowercase"... Is it possible to implement them with Mapped types? What might that look like? Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
+1. Let's think back to the "Intrinsic String Types" like "Uppercase" and "Lowercase"... Is it possible to implement them with Mapped types? What might that look like? Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
    ```typescript
    import { AssertExtends } from "../../../test/assert";
