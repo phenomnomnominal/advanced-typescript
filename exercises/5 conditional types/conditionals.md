@@ -17,11 +17,7 @@
    ```typescript
    import { AssertExtends } from "../../../test/assert";
 
-   type PromiseValue<Prom extends Promise<unknown>> = Prom extends Promise<
-     infer Value
-   >
-     ? Value
-     : never;
+   type PromiseValue<Prom extends Promise<unknown>> = Prom;
 
    type PromiseNumber = AssertExtends<number, PromiseValue<Promise<number>>>;
 
