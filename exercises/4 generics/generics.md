@@ -5,7 +5,7 @@
 2. Have a go constructing some string and unions with Template Literal Types. Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
    ```typescript
-   import { AssertExtends } from "./test/assert";
+   import { AssertExtends } from "../../test/assert";
 
    type DaysOfWeek = `${string}${string}`;
 

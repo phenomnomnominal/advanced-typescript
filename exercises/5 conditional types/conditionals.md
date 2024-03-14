@@ -3,7 +3,7 @@
 1. Imagine you have some sort of jQuery-like library, which can either take a `string` (query selector) or a `Function` (ready event handler). If it gets a `string`, it will return an `Array<Element>`, and it it gets a `Function` it will return `null`. Write a conditional type to handle these different return types! Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
    ```typescript
-   import { AssertExtends } from "../../../test/assert";
+   import { AssertExtends } from "../../test/assert";
 
    type JQuery<Input> = unknown;
 
@@ -14,23 +14,23 @@
 
 2. Write a conditional type that will infer the type of a Promise! It only has to unwrap one layer of promises. Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
-   ```typescript
-   import { AssertExtends } from "../../../test/assert";
+```typescript
+   import { AssertExtends } from "../../test/assert";
 
-   type PromiseValue<Prom extends Promise<unknown>> = Prom;
+  type PromiseValue<Prom extends Promise<unknown>> = Prom;
 
-   type PromiseNumber = AssertExtends<number, PromiseValue<Promise<number>>>;
+  type PromiseNumber = AssertExtends<number, PromiseValue<Promise<number>>>;
 
-   type PromisePromise = AssertExtends<
-     Promise<unknown>,
-     PromiseValue<Promise<Promise<unknown>>>
-   >;
-   ```
+  type PromisePromise = AssertExtends<
+    Promise<string>,
+    PromiseValue<Promise<Promise<string>>>
+  >;
+```
 
 3. Write a Conditional Template Literal Type that will split an input string given a separator character. Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
 ```typescript
-import { AssertExtends } from "./test/assert";
+import { AssertExtends } from "../../test/assert";
 
 type Split<Input, Separator> = `` ? unknown : unknown;
 
