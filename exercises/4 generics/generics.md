@@ -5,11 +5,11 @@
 2. Have a go constructing some string and unions with Template Literal Types. Paste the code snippet below into a new TS file and fill in the implementations to make the type-checker happy!
 
    ```typescript
-   import { AssertExtends } from "../../test/assert";
+   import { AssertEquals } from "../../test/assert";
 
    type DaysOfWeek = `${string}${string}`;
 
-   type CreateDaysOfWeek = AssertExtends<
+   type CreateDaysOfWeek = AssertEquals<
      | "Monday"
      | "Tuesday"
      | "Wednesday"
@@ -25,14 +25,14 @@
      Number extends string
    > = `${string}`;
 
-   type CheckNZNumber = AssertExtends<
+   type CheckNZNumber = AssertEquals<
      "(+64) 20 400 34557",
      PhoneNumber<64, "20 400 34557">
    >;
 
    type Echo<Yell> = ``;
 
-   type CheckEcho = AssertExtends<"HELLO! Hello! hello...", Echo<"hElLo">>;
+   type CheckEcho = AssertEquals<"HELLO! Hello! hello...", Echo<"hElLo">>;
    ```
 
 > Bonus points for figuring out what the maximum union size is in TypeScript!

@@ -1,9 +1,17 @@
-export type AssertExtends<
-  SuperType,
-  Subtype extends SuperType
-> = Subtype extends SuperType ? Subtype : never;
+type Equals<X, Y> = 
+  (<T>() => T extends X ? 1 : 2) extends 
+  (<T>() => T extends Y ? 1 : 2)
+    ? X
+    : never;
 
-type TestTrue = AssertExtends<Object, true>;
-type TestNever = AssertExtends<object, never>;
+type Prettify<T> = {
+  [K in keyof T]: T[K];
+} & {};
 
-type TestFalseString = AssertExtends<false, string>;
+export type AssertEquals<X, Y extends Equals<X, Y>> = 
+  X extends Equals<X, Y> 
+    ? X
+    : { X: Prettify<X>, Y: Prettify<Y>, message: `X is not equal to Y` };
+
+type TestEqualsOneThree = AssertEquals<1, 3>; // never
+type TestEqualsOneOne = AssertEquals<1, 1>; // 1
